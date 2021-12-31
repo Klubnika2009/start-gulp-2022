@@ -1,0 +1,27 @@
+.header {
+  z-index: 10;
+  margin-top: 10px;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: $size;
+  color: $text-light;
+  background-color: $tuatara;
+  border: 1px solid rgba($black, 0.5);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  box-shadow: 0 0 5px rgba($black, 0.5);
+}
+
+.logo {
+  margin-left: 20px;
+
+  span {
+    color: $accent;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+}

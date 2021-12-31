@@ -1,0 +1,163 @@
+.hero__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  background-color: $tuatara;
+  background-image: linear-gradient(225deg, rgba(255, 61, 171, 0.3) 0%, rgba(120, 75, 160, 0.3) 50%, rgba(22, 98, 153, 0.3) 100%);
+  border-right: $border-dark;
+  border-bottom: $border-dark;
+  border-left: $border-dark;
+  box-shadow: 0 0 5px rgba($black, 0.5);
+
+  .hero__text {
+    position: relative;
+    color: $tuatara;
+    font-size: rem(50);
+    -webkit-text-stroke: 0.01rem rgba($black, 1);
+    font-family: $secondary-font;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    white-space: nowrap;
+    text-transform: uppercase;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      overflow: hidden;
+      color: rgba($accent, 1);
+      border-right: 2px solid $accent;
+      animation: text 10s linear infinite;
+      content: attr(data-text);
+      -webkit-text-stroke: 0 rgba($tuatara, 1);
+    }
+
+    @media screen and (max-width: 960px) {
+      font-size: rem(30);
+    }
+  }
+}
+
+.hero__nav {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.hero__social {
+  z-index: 10;
+  display: flex;
+  flex: 0 0 200px;
+  overflow: hidden;
+  background-color: $tuatara;
+  border-right: $border-dark;
+  border-bottom: $border-dark;
+  border-left: $border-dark;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  box-shadow: 0 0 5px rgba($black, 0.5);
+}
+
+.hero__social-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+
+  .hero__social-icon {
+    width: 18px;
+    height: 18px;
+    fill: $accent;
+  }
+
+  &:not(:last-child) {
+    border-right: $border-dark;
+  }
+
+  &:hover {
+    background-color: lighten($tuatara, 10%);
+    transition: background-color 0.25s ease-in-out;
+
+    .hero__icon {
+      transition: all 0.25s ease-in-out;
+      fill: $text-light;
+    }
+  }
+}
+
+.hero__contact {
+  z-index: 10;
+  display: flex;
+  flex: 1 0 0;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: $tuatara;
+  border-right: $border-dark;
+  border-bottom: $border-dark;
+  border-left: $border-dark;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  box-shadow: 0 0 5px rgba($black, 0.5);
+
+  a {
+    color: $text-light;
+    font-size: rem(14);
+    letter-spacing: 1px;
+    text-decoration: none;
+
+    &:hover {
+      color: $accent;
+      transition: color 0.25s ease-in-out;
+    }
+  }
+}
+
+.hero__option {
+  z-index: 10;
+  display: flex;
+  flex: 0 0 80px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: $tuatara;
+  border-right: $border-dark;
+  border-bottom: $border-dark;
+  border-left: $border-dark;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  box-shadow: 0 0 5px rgba($black, 0.5);
+  cursor: pointer;
+
+  .hero__option-icon {
+    width: 18px;
+    height: 18px;
+    fill: $accent;
+  }
+
+  &:hover {
+    background-color: lighten($tuatara, 10%);
+    transition: background-color 0.25s ease-in-out;
+
+    .hero__option-icon {
+      transition: all 0.25s ease-in-out;
+      fill: $text-light;
+    }
+  }
+}
+
+@keyframes text {
+  0% {
+    width: 0;
+  }
+
+  70% {
+    width: 100%;
+  }
+}
